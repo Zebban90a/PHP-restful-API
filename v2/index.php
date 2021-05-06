@@ -8,8 +8,8 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 header("Referrer-Policy: no-referrer");
 header("Content-Type: application/json; charset=UTF-8");
 
-$show = $_GET['show'] ?? false;
-$category = $_GET['category'] ?? false;
+$show = $_GET['show'] ?? null;
+$category = $_GET['category'] ?? null;
 
 
 $result = $arr;
@@ -31,7 +31,8 @@ try{
 }
 
 if(!empty($errors)) {
-    $json = json_encode($errors, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    $showErrors = $errors;
+    $json = json_encode($showErrors, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     echo $json;
 }
 
