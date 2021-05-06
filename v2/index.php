@@ -17,6 +17,9 @@ try{
     if(isset($show)){
         $result = getRandom($result, $show);
     }
+    if(!isset($category) && !isset($show)){
+        throw new Exception ('Ange category eller show');
+    }
     $json = json_encode($result, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     echo $json;
 } catch (Exception $e) {
