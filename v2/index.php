@@ -1,4 +1,4 @@
-<?php include('../data.php') ?>
+<?php require_once('../data.php') ?>
 <?php require_once('../functions.php'); ?>
 
 <?php
@@ -27,3 +27,5 @@ try{
     $json = json_encode($obj, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     echo $json;
 }
+
+?>
